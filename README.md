@@ -5,111 +5,172 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>LearnWithFlowmate - MVP</title>
 <style>
+  /* Reset some default styles */
+  * {
+    box-sizing: border-box;
+  }
+
   body {
-    font-family: Arial, sans-serif;
-    margin: 0; padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: #fafafa;
   }
+
+  /* Header styles with a vibrant gradient background */
   header {
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, #4CAF50, #81C784);
     color: #fff;
-    padding: 30px 20px;
+    padding: 40px 20px;
     text-align: center;
   }
+
   header h1 {
     margin: 0;
-    font-size: 2em;
+    font-size: 2.5em;
+    max-width: 800px;
+    margin: 0 auto;
   }
+
   header p {
-    margin-top: 10px;
-    font-size: 1.2em;
+    margin-top: 15px;
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 15px auto 0;
   }
+
   .cta-button {
     background-color: #fff;
     color: #4CAF50;
-    padding: 12px 24px;
+    padding: 14px 28px;
     border: none;
-    border-radius: 4px;
-    font-size: 1em;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
     cursor: pointer;
-    margin-top: 20px;
-    text-decoration: none;
+    margin-top: 25px;
     display: inline-block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none;
   }
+
+  .cta-button:hover {
+    background-color: #e0f2f1;
+    transform: translateY(-2px);
+  }
+
   section {
-    padding: 40px 20px;
+    padding: 50px 20px;
     max-width: 1000px;
     margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-top: -20px;
   }
+
   h2 {
     text-align: center;
-    color: #333;
+    color: #2e7d32;
+    font-size: 2em;
+    margin-bottom: 20px;
   }
-  .problem, .solution, .how {
-    margin-top: 30px;
-  }
+
   ul {
     list-style: none;
     padding: 0;
   }
+
   li {
-    margin: 10px 0;
-    font-size: 1.1em;
+    margin: 12px 0;
+    font-size: 1.2em;
   }
+
+  /* Features grid */
   .features {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
   }
+
   .feature {
-    flex: 1 1 200px;
+    flex: 1 1 180px;
     text-align: center;
-    margin: 10px;
-    padding: 10px;
+    margin: 15px;
+    padding: 15px;
+    background-color: #f1f8e9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
+
+  .feature:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
   .feature-icon {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 10px;
   }
+
+  /* Learning steps flow */
   .flow-steps {
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
   }
+
   .step {
-    background: #fff;
+    background: #e8f5e9;
     padding: 20px;
     border-radius: 8px;
-    width: 150px;
+    width: 180px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin: 10px;
+    margin: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
+
+  .step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
   footer {
-    background-color: #333;
+    background-color: #2e7d32;
     color: #fff;
-    padding: 20px;
+    padding: 25px 20px;
     text-align: center;
+    margin-top: 50px;
   }
+
+  /* Responsive adjustments */
   @media(max-width: 768px){
-    .features {
+    .features, .flow-steps {
       flex-direction: column;
       align-items: center;
     }
-    .step {
+    .feature, .step {
       width: 80%;
     }
+  }
+
+  /* Additional styles for heading emphasis */
+  .highlight {
+    color: #388E3C;
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Struggling to Finish Courses? We Have a Solution.</h1>
+  <h1>Struggling to Finish Courses? <span class="highlight">We Have a Solution.</span></h1>
   <p>A behaviour-driven platform that keeps you motivated, builds habits, and ensures steady progress.</p>
   <a href="#beta" class="cta-button">Join the Beta</a>
 </header>
@@ -117,9 +178,9 @@
 <section class="problem">
   <h2>Why Do Learners Drop Out?</h2>
   <ul>
-    <li>Lack of visible progress</li>
-    <li>No accountability or habit formation</li>
-    <li>Monotonous learning experience</li>
+    <li><strong>Lack of visible progress</strong></li>
+    <li><strong>No accountability or habit formation</strong></li>
+    <li><strong>Monotonous learning experience</strong></li>
   </ul>
 </section>
 
@@ -129,23 +190,23 @@
   <div class="features">
     <div class="feature">
       <div class="feature-icon">📈</div>
-      <div>Visible progress</div>
+      <div><strong>Visible progress</strong></div>
     </div>
     <div class="feature">
       <div class="feature-icon">✅</div>
-      <div>Small step wins</div>
+      <div><strong>Small step wins</strong></div>
     </div>
     <div class="feature">
       <div class="feature-icon">📅</div>
-      <div>Habit tracking</div>
+      <div><strong>Habit tracking</strong></div>
     </div>
     <div class="feature">
       <div class="feature-icon">💡</div>
-      <div>Motivation nudges</div>
+      <div><strong>Motivation nudges</strong></div>
     </div>
     <div class="feature">
       <div class="feature-icon">🏆</div>
-      <div>Rewards & Certification</div>
+      <div><strong>Rewards & Certification</strong></div>
     </div>
   </div>
 </section>
@@ -175,14 +236,14 @@
 <section>
   <h2 style="text-align:center;">See the Difference</h2>
   <ul style="max-width:600px; margin:auto; list-style:none; padding:0;">
-    <li>30-40% higher course completion</li>
-    <li>Steady habit formation</li>
-    <li>Increased motivation & engagement</li>
+    <li><strong>30-40% higher course completion</strong></li>
+    <li><strong>Steady habit formation</strong></li>
+    <li><strong>Increased motivation & engagement</strong></li>
   </ul>
 </section>
 
-<section style="text-align:center; padding:40px;">
-  <p style="font-size:1.2em;">Help us shape the future of learning. Join the beta now!</p>
+<section style="text-align:center; padding:50px;">
+  <p style="font-size:1.3em;">Help us shape the future of learning. Join the beta now!</p>
   <a href="#beta" class="cta-button">Join the Beta</a>
 </section>
 
